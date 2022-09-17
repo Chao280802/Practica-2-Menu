@@ -3,49 +3,53 @@ package robot.estados;
 import robot.McRobot;
 
 /**
- * Clase que define el comportamiento del robot cuanto esta en modo: "Suspendido".
+ * Clase que define el comportamiento del robot cuanto esta en modo: "Activo".
  */
-public class ModoSuspendido implements EstadoRobot{
+public class ModoActivo implements EstadoRobot{
 
     McRobot robot;
 
     /**
-     * Constructor del ModoSuspendido asigna al robot que adquirirá este modo
+     * Constructor del ModoActivo asigna al robot que adquirirá este modo
      * @param robot robot que adquirirá el modo
      */
-    public ModoSuspendido(McRobot robot){
+    public ModoActivo(McRobot robot){
         this.robot = robot;
     }
 
     @Override
     public void suspender() {
-        System.out.println("El robot ya está suspendido...");
+        // TODO Auto-generated method stub
+        
     }
 
     @Override
     public void activar() {
-        if(robot.getHayCliente()){
-           
-        }
+        // TODO Auto-generated method stub
+        
     }
 
     @Override
     public void caminar() {
+        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void tomarOrden() {
+        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void cocinar() {
+        // TODO Auto-generated method stub
         
     }
 
     @Override
     public void entregarOrden() {
+        // TODO Auto-generated method stub
         
     }
     

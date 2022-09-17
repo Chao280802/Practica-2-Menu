@@ -9,9 +9,26 @@ public class McRobot{
     private EstadoRobot estadoActual;
 
     private boolean hayCliente;
-    
+
+    private ModoSuspendido modoSuspendido;
+    private ModoActivo modoActivo;
+    private ModoCaminar modoCaminar;
+    private ModoTomarOrden modoTomarOrden;
+    private ModoCocinando modoCocinando;
+    private ModoEntregarOrden modoEntregarOrden;
+
+    /**
+     * Constructor de un McRobot, inicializa el robot en un estado suspendido.
+     */
     public McRobot(){
         hayCliente = false;
+
+        modoSuspendido = new ModoSuspendido(this);
+        modoActivo = new ModoActivo(this);
+        modoCaminar = new ModoCaminar(this);
+        modoTomarOrden = new ModoTomarOrden(this);
+        modoCocinando = new ModoCocinando(this);
+        modoEntregarOrden = new ModoEntregarOrden(this);
     }
 
     public boolean getHayCliente(){
@@ -20,6 +37,10 @@ public class McRobot{
 
     public void asignaNuevoEstado(EstadoRobot nuevoEstado){
         this.estadoActual = nuevoEstado;
+    }
+
+    public EstadoRobot getEstadoSuspendido(){
+        return this.modoSuspendido;
     }
 
 }

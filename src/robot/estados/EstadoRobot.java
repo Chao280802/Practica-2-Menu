@@ -1,5 +1,4 @@
 package robot.estados;
-import robot.McRobot;
 /**
  * Interfaz que define los estados que puede adquierir un McRobot
  */
