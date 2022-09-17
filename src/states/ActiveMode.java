@@ -1,12 +1,12 @@
 package states;
 
-import menus.*;
+import states.menus.*;
 
 public class ActiveMode implements State {
     public void walkToClientsTable(){}
 
-    public MenuItem takeClientsOrder(Menu menus){
-	return null;
+    public MenuItem takeClientOrder(Menu menus){
+	    return null;
     }
 
     public void cook(MenuItem item){}
