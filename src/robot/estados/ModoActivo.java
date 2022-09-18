@@ -3,13 +3,13 @@ package robot.estados;
 import robot.estados.menus.*;
 
 public class ModoActivo implements Estado {
-    public void walkToClientsTable(){}
+    public void caminarHaciaElCliente(){}
 
-    public MenuItem takeClientOrder(Menu menus){
+    public MenuItem tomarOrden(Menu menus){
 	    return null;
     }
 
-    public void cook(MenuItem item){}
+    public void cocinar(MenuItem item){}
 
-    public void suspend(){}
+    public void suspender(){}
 }
