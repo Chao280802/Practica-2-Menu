@@ -1,6 +1,6 @@
 package states;
 
-import menus.*;
+import states.menus.*;
 
 public interface State {
     void walkToClientsTable();
