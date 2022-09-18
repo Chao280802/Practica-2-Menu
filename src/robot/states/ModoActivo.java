@@ -2,7 +2,7 @@ package robot.states;
 
 import robot.states.menus.*;
 
-public class SuspendMode implements State {
+public class ModoActivo implements Estado {
     public void walkToClientsTable(){}
 
     public MenuItem takeClientOrder(Menu menus){
@@ -11,5 +11,5 @@ public class SuspendMode implements State {
 
     public void cook(MenuItem item){}
 
-    public void activate(){}
+    public void suspend(){}
 }
