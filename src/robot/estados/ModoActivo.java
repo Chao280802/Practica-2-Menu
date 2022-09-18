@@ -9,7 +9,7 @@ public class ModoActivo implements Estado {
 	    return null;
     }
 
-    public void cocinar(MenuItem item){}
+    public void cocinar(Hamburguesa item){}
 
     public void suspender(){}
 }
