@@ -1,15 +1,19 @@
 package robot.estados;
 
 import robot.estados.menus.*;
+import states.menus.Hamburguesa;
 
 public class ModoSuspendido implements Estado {
-    public void caminarHaciaElCliente(){}
-
-    public MenuItem tomarOrden(Menu menus){
-	    return null;
+    public void caminarHaciaElCliente() {
     }
 
-    public void cocinar(Hamburgesa item){}
+    public Hamburguesa tomarOrden(Menu menus) {
+        return null;
+    }
 
-    public void activar(){}
+    public void cocinar(Hamburguesa item) {
+    }
+
+    public void activar() {
+    }
 }

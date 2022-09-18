@@ -9,23 +9,39 @@ public abstract class Hamburguesa {
 
     // Getters
 
-    public abstract int obtenerId();
+    public int obtenerId() {
+        return this.id;
+    }
 
-    public abstract String obtenerNombre();
+    public String obtenerNombre() {
+        return this.nombre;
+    }
 
-    public abstract String obtenerDescripcion();
+    public String obtenerDescripcion() {
+        return this.descripcion;
+    }
 
-    public abstract int obtenerPrecio();
+    public int obtenerPrecio() {
+        return this.precio;
+    }
 
     // Setters
 
-    public abstract void asignarId();
+    public void asignarId(int id) {
+        this.id = id;
+    }
 
-    public abstract void asignarNombre();
+    public void asignarNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public abstract void asignarDescripcion();
+    public void asignarDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
 
-    public abstract void asignarPrecio();
+    public void asignarPrecio(int precio) {
+        this.precio = precio;
+    }
 
     // Hookers
 
