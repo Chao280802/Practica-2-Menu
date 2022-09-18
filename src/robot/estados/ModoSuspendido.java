@@ -9,7 +9,7 @@ public class ModoSuspendido implements Estado {
 	    return null;
     }
 
-    public void cocinar(MenuItem item){}
+    public void cocinar(Hamburgesa item){}
 
     public void activar(){}
 }
