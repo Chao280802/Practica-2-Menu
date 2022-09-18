@@ -1,4 +1,4 @@
-package states.menus;
+package robot.states.menus;
 
 public interface MenuItem {
     String obtenerNombre();

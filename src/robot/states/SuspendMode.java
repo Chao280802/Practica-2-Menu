@@ -1,6 +1,6 @@
-package states;
+package robot.states;
 
-import states.menus.*;
+import robot.states.menus.*;
 
 public class SuspendMode implements State {
     public void walkToClientsTable(){}
