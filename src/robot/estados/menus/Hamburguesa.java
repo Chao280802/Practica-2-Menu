@@ -5,7 +5,7 @@ public abstract class Hamburguesa {
     int id, precio;
     String nombre, descripcion;
     boolean conQueso = false;
-    boolean vegetaria = false;
+    boolean vegetariana = false;
 
     // Getters
 
@@ -36,7 +36,7 @@ public abstract class Hamburguesa {
     }
 
     public boolean vegetariana(int respuesta) {
-        return this.vegetaria = respuesta == 1;
+        return this.vegetariana = respuesta == 1;
     }
 
     // Prototipo que describe como sera la preparacion de la hamburguesas:
