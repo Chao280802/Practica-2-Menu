@@ -1,5 +1,5 @@
 package robot;
-import robot.states.*;
+import robot.estados.*;
 
 public class McRobot {
     private Estado activeMode;
