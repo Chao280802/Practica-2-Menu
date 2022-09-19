@@ -32,13 +32,17 @@ public class DragonStar extends Hamburguesa {
 
     @Override
     public String prepararProteina() {
-        return "Estoy preparando el pastor";
+        if (!this.vegetariana)
+            return "Estoy preparando el pastor";
+        return "Estoy preparando el sustituto de carne";
     }
 
     @Override
     public String ponerProteina() {
+        if (!this.vegetariana)
 
-        return "Estoy poniendo el pastor";
+            return "Estoy poniendo el pastor";
+        return "Estoy poniendo el sustituto de carne";
     }
 
     public String ponerJalapenio() {

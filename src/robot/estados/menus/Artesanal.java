@@ -39,8 +39,8 @@ public class Artesanal extends Hamburguesa {
 
     @Override
     public String ponerProteina() {
-        if(!this.vegetariana)
-            return "Estoy poniendo la carne de res premium";
+        if (!this.vegetariana)
+            return "Estoy poniendo la carne de res premium" + this.ponerJamonSerrano();
         return "Estoy poniendo carne de soya premium";
     }
 

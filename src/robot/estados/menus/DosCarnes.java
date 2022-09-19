@@ -32,12 +32,16 @@ public class DosCarnes extends Hamburguesa {
 
     @Override
     public String prepararProteina() {
-        return "Estoy preparando la carne";
+        if (!this.vegetariana)
+            return "Estoy preparando la carne";
+        return "Estoy preparando el sustituto de carne";
     }
 
     @Override
     public String ponerProteina() {
-        return "Estoy poniendo la carne";
+        if (!this.vegetariana)
+            return "Estoy poniendo la  carne \n" + this.ponerPollo();
+        return "Estoy poniendo el sustituto de carne";
     }
 
     public String ponerPollo() {

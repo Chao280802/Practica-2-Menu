@@ -31,12 +31,16 @@ public class Krisp extends Hamburguesa {
 
     @Override
     public String prepararProteina() {
-        return "Estoy preparando la carne";
+        if (!this.vegetariana)
+            return "Estoy preparando la carne";
+        return "Estoy preparando el sustituto de carne";
     }
 
     @Override
     public String ponerProteina() {
-        return "Estoy poniendo la carne";
+        if (!this.vegetariana)
+            return "Estoy poniendo la carne\n" + this.ponerTocino();
+        return "EStou ponienddo el sustituto de carne";
     }
 
     public String ponerArosDeCebolla() {
@@ -46,5 +50,4 @@ public class Krisp extends Hamburguesa {
     public String ponerTocino() {
         return "Estoy poniendo el tocino";
     }
-
 }

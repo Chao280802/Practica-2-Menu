@@ -31,12 +31,17 @@ public class TeriyakiMango extends Hamburguesa {
 
     @Override
     public String prepararProteina() {
-        return "Estoy preparando las rebanadas de carne";
+        if (!this.vegetariana)
+            return "Estoy preparando las rebanadas de carne";
+        return "Estoy preparando la rebanadas vegetarianas";
     }
 
     @Override
     public String ponerProteina() {
-        return "Estoy poniendo las rebanadas de carne";
+        if (!this.vegetariana)
+
+            return "Estoy poniendo las rebanadas de carne";
+        return "Estoy poniendo las rebanadas vegetarianas";
     }
 
     public String ponerSalsaTeriyaki() {

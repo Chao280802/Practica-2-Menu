@@ -32,12 +32,16 @@ public class Mexicana extends Hamburguesa {
 
     @Override
     public String prepararProteina() {
-        return "Estoy preparando la arrachera";
+        if (!this.vegetariana)
+            return "Estoy preparando la arrachera";
+        return "Estoy preparando el sustituto de arrachera";
     }
 
     @Override
     public String ponerProteina() {
-        return "Estoy poniendo la arrachera";
+        if (!this.vegetariana)
+            return "Estoy poniendo la arrachera";
+        return "Estoy poniendo el sustituto de carne";
     }
 
     public String ponerGuacamole() {
