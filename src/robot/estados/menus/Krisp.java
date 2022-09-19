@@ -21,12 +21,11 @@ public class Krisp extends Hamburguesa {
     }
 
     @Override
-    public String preparar(boolean conQueso, boolean vegetariana) {
-        String preparacion = this.ponerPan() + "\n" + this.ponerMayonesa() + "\n" + this.ponerMostaza() + "\n"
-                + this.prepararProteina() + "\n" + this.ponerProteina() + "\n";
-        if (this.conQueso)
-            preparacion += this.ponerQueso() + "\n";
-        preparacion += this.ponerVegetales() + "\n" + this.ponerCatsup() + "\n" + this.ponerPan();
+    public String preparar(boolean conQueso, boolean vegetariana){
+        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
+        if(this.conQueso)
+            preparacion+=this.ponerQueso()+"\n";
+        preparacion+=this.ponerVegetales()+"\n"+this.ponerArosDeCebolla()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
         return preparacion;
     }
 
@@ -51,5 +50,4 @@ public class Krisp extends Hamburguesa {
     public String ponerTocino() {
         return "Estoy poniendo el tocino";
     }
-
 }

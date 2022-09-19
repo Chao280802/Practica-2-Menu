@@ -21,12 +21,11 @@ public class TeriyakiMango extends Hamburguesa {
     }
 
     @Override
-    public String preparar(boolean conQueso, boolean vegetariana) {
-        String preparacion = this.ponerPan() + "\n" + this.ponerMayonesa() + "\n" + this.ponerMostaza() + "\n"
-                + this.prepararProteina() + "\n" + this.ponerProteina() + "\n";
-        if (this.conQueso)
-            preparacion += this.ponerQueso() + "\n";
-        preparacion += this.ponerVegetales() + "\n" + this.ponerCatsup() + "\n" + this.ponerPan();
+    public String preparar(boolean conQueso, boolean vegetariana){
+        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerEspecias()+"\n"+this.ponerSalsaTeriyaki()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
+        if(this.conQueso)
+            preparacion+=this.ponerQueso()+"\n";
+            preparacion+=this.ponerVegetales()+"\n"+this.ponerMangoPreparado()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan()+"\n";
         return preparacion;
     }
 

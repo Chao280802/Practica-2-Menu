@@ -22,12 +22,11 @@ public class Mexicana extends Hamburguesa {
     }
 
     @Override
-    public String preparar(boolean conQueso, boolean vegetariana) {
-        String preparacion = this.ponerPan() + "\n" + this.ponerMayonesa() + "\n" + this.ponerMostaza() + "\n"
-                + this.prepararProteina() + "\n" + this.ponerProteina() + "\n";
-        if (this.conQueso)
-            preparacion += this.ponerQueso() + "\n";
-        preparacion += this.ponerVegetales() + "\n" + this.ponerCatsup() + "\n" + this.ponerPan();
+    public String preparar(boolean conQueso, boolean vegetariana){
+        String preparacion = this.ponerPan()+"\n"+this.ponerCremaConEspecias()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
+        if(this.conQueso)
+            preparacion+=this.ponerQueso()+"\n";
+        preparacion+=this.ponerTotopos()+"\n"+this.ponerVegetales()+"\n"+this.ponerGuacamole()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
         return preparacion;
     }
 
@@ -56,5 +55,4 @@ public class Mexicana extends Hamburguesa {
     public String ponerCremaConEspecias() {
         return "Estoy poniendo la crema con especias";
     }
-
 }

@@ -10,7 +10,7 @@ public class BigB extends Hamburguesa {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        // Adentro del metodo se inicializa la variable OwO
+        /* Adentro del metodo se inicializa la variable OwO */
         this.conQueso(conQuesoRespuesta);
         this.vegetariana(vegetarianaRespuesta);
     }
