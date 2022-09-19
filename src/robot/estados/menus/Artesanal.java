@@ -22,15 +22,26 @@ public class Artesanal extends Hamburguesa {
     }
 
     @Override
-    public String prepararProteina() {
+    public String preparar(boolean conQueso, boolean vegetariana){
+        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
+        if(this.conQueso)
+            preparacion+=this.ponerQueso()+"\n";
+        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+        return preparacion;
+    }
 
-        return "Estoy preparando la carne de alta calidad";
+    @Override
+    public String prepararProteina() {
+        if(!this.vegetariana)
+            return "Estoy preparando la carne de res premium";
+        return "Estoy preparando una carne de soya premium";
     }
 
     @Override
     public String ponerProteina() {
-
-        return "Estoy poniendo la carne premium";
+        if(!this.vegetariana)
+            return "Estoy poniendo la carne de res premium";
+        return "Estoy poniendo carne de soya premium";
     }
 
     public String ponerAderezoMiel() {

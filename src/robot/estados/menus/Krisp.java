@@ -18,7 +18,15 @@ public class Krisp extends Hamburguesa {
         this.nombre = "Hamburguesa Krisp";
         this.descripcion = "Hamburguesa de res con aros de cebolla y crujiente tocino";
         this.precio = 45;
+    }
 
+    @Override
+    public String preparar(boolean conQueso, boolean vegetariana){
+        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
+        if(this.conQueso)
+            preparacion+=this.ponerQueso()+"\n";
+        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+        return preparacion;
     }
 
     @Override

@@ -4,15 +4,14 @@ import java.util.Iterator;
 
 public class Tradicional implements Menu {
 
+    private String nombre = "Hamburguesas Tradicionales";
+    private Hamburguesa[] alimentos;
+
     public Tradicional() {
         alimentos[0] = new Hawaiana();
         alimentos[1] = new Krisp();
         alimentos[2] = new BigB();
-
     }
-
-    private String nombre = "Hamburguesas Tradicionales";
-    private Hamburguesa[] alimentos;
 
     public String obtenerNombre() {
         return this.nombre;

@@ -40,20 +40,27 @@ public abstract class Hamburguesa {
     }
 
     public void asignarPrecio(int precio) {
+        if(precio <= 0)
+            throw new IllegalArgumentException();
         this.precio = precio;
     }
 
     // Hookers
 
     public boolean conQueso(int respuesta) {
-
+        if(respuesta != 0 && respuesta != 1)
+            throw new IllegalArgumentException();
         return this.conQueso = respuesta == 1;
 
     }
 
     public boolean vegetariana(int respuesta) {
+        if(respuesta != 0 && respuesta != 1)
+            throw new IllegalArgumentException();
         return this.vegetariana = respuesta == 1;
     }
+
+    public abstract String preparar(boolean conQueso, boolean vegetariana);
 
     // Prototipo que describe como sera la preparacion de la hamburguesas:
 
@@ -74,7 +81,7 @@ public abstract class Hamburguesa {
     public abstract String ponerProteina();
 
     public String ponerQueso() {
-        return "Estoy poniendo el queso";
+        return "Estoy poniendo queso manchego";
     }
 
     public String ponerVegetales() {
