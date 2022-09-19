@@ -1,6 +1,8 @@
 package robot.estados;
 
 import robot.McRobot;
+import java.util.LinkedList;
+import robot.estados.menus.Menu;
 
 /**
  * Clase que define el comportamiento del robot cuanto esta en modo:
@@ -53,9 +55,12 @@ public class ModoCaminar implements EstadoRobot {
      */
     @Override
     public void tomarOrden() {
-            System.out.println("El robot  ha llegado a  la mesa del cliente y tomará su orden.");
-            robot.asignaNuevoEstado(robot.getModoTomarOrden());
-            System.out.println("**MODO CAMINAR** ----> **MODO TOMAR ORDEN**");
+        System.out.println("El robot  ha llegado a  la mesa del cliente y tomará su orden.");
+        robot.asignaNuevoEstado(robot.getModoTomarOrden());
+        System.out.println("**MODO CAMINAR** ----> **MODO TOMAR ORDEN**");
+        ModoTomarOrden modoTomarOrden = (ModoTomarOrden) robot.getModoTomarOrden();
+        modoTomarOrden.leerMenu();
+        modoTomarOrden.registraOrden();
     }
 
     /**

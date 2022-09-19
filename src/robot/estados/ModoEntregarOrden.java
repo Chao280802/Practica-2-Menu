@@ -1,6 +1,8 @@
 package robot.estados;
 
 import robot.McRobot;
+import java.util.LinkedList;
+import robot.estados.menus.Menu;
 
 /**
  * Clase que define el comportamiento del robot cuanto esta en modo:
@@ -11,9 +13,9 @@ public class ModoEntregarOrden implements EstadoRobot {
     McRobot robot;
 
     /**
-     * Constructor del ModoEntregarOrden asigna al robot que adquirirá este modo
+     * Constructor del ModoEntregarOrden asigna al robot que adquirirá este modo.
      * 
-     * @param robot robot que adquirirá el modo
+     * @param robot robot que adquirirá el modo.
      */
     public ModoEntregarOrden(McRobot robot) {
         this.robot = robot;

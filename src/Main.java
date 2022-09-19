@@ -1,4 +1,10 @@
 import robot.McRobot;
+import robot.estados.menus.DeLujo;
+import robot.estados.menus.Menu;
+import robot.estados.menus.Tradicional;
+import robot.estados.menus.Versatil;
+
+import java.util.LinkedList;
 import java.util.Scanner;
 
 /**
@@ -7,7 +13,14 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        McRobot robot = new McRobot();
+
+        Menu deLujoMenu = new DeLujo();
+        Menu versatilMenu = new Versatil();
+        Menu tradicionalMenu = new Tradicional();
+
+        LinkedList<Menu> subMenus = submenus(deLujoMenu, versatilMenu, tradicionalMenu);
+
+        McRobot robot = new McRobot(subMenus);
 
         System.out.println("Bienvenido al restaurante McHamburgesas...");
         System.out.println("Nuestro McRobot lo estará atendiendo");
@@ -23,7 +36,7 @@ public class Main {
                 "3 .- **MODO CAMINAR** \n" +  
                 "4 .- **MODO TOMAR ORDEN** \n" +
                 "5 .- **MODO COCINAR** \n" +
-                "6 .- **MODO ENTREGAR ORDEN \n" + 
+                "6 .- **MODO ENTREGAR ORDEN** \n" + 
                 "7 .- **SALIR** \n");
 
                 while (true) {
@@ -74,5 +87,13 @@ public class Main {
             }
 
         } while (opcion != 7);
+    }
+
+    public static LinkedList<Menu> submenus(Menu deLujo, Menu versatil, Menu Tradicional){
+        LinkedList<Menu> sMenus = new LinkedList<Menu>();
+        sMenus.add(deLujo);
+        sMenus.add(versatil);
+        sMenus.add(Tradicional);
+        return sMenus;
     }
 }

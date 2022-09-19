@@ -1,5 +1,11 @@
 package robot;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
+import robot.estados.menus.Hamburguesa;
+import robot.estados.menus.Menu;
+
 import robot.estados.*;
 
 /**
@@ -16,14 +22,16 @@ public class McRobot {
     private ModoCocinando modoCocinando;
     private ModoEntregarOrden modoEntregarOrden;
 
+    private Hamburguesa hamburguesa;
+
     /**
      * Constructor de un McRobot, inicializa el robot en un estado suspendido.
      */
-    public McRobot() {
+    public McRobot(LinkedList<Menu> menu) {
         modoSuspendido = new ModoSuspendido(this);
         modoActivo = new ModoActivo(this);
         modoCaminar = new ModoCaminar(this);
-        modoTomarOrden = new ModoTomarOrden(this);
+        modoTomarOrden = new ModoTomarOrden(this, menu);
         modoCocinando = new ModoCocinando(this);
         modoEntregarOrden = new ModoEntregarOrden(this);
 
@@ -133,7 +141,19 @@ public class McRobot {
      * Regresa el estado actual en el que se encuentra el robot.
      * @return estado actual del robot.
      */
-    public String getEstadoActual() {
+    public String getDescripcionEstadoActual() {
         return estadoActual.toString();
+    }
+
+    public EstadoRobot getEstadoActual(){
+        return this.estadoActual;
+    }
+
+    public Hamburguesa getOrden(){
+        return this.hamburguesa;
+    }
+
+    public void setIdOrden(Hamburguesa orden){
+        this.hamburguesa = orden;
     }
 }

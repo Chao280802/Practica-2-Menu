@@ -1,6 +1,10 @@
 package robot.estados;
 
 import robot.McRobot;
+import java.util.LinkedList;
+
+import robot.estados.menus.Hamburguesa;
+import robot.estados.menus.Menu;
 
 /**
  * Clase que define el comportamiento del robot cuanto esta en modo:
@@ -11,9 +15,9 @@ public class ModoCocinando implements EstadoRobot {
     McRobot robot;
 
     /**
-     * Constructor del ModoCocinando asigna al robot que adquirirá este modo
+     * Constructor del ModoCocinando asigna al robot que adquirirá este modo.
      * 
-     * @param robot robot que adquirirá el modo
+     * @param robot robot que adquirirá el modo.
      */
     public ModoCocinando(McRobot robot) {
         this.robot = robot;
@@ -84,6 +88,10 @@ public class ModoCocinando implements EstadoRobot {
     @Override
     public String toString() {
         return "El robot está en modo: **COCINANDO**";
+    }
+
+    public void prepararPedido(){
+        System.out.println(robot.getOrden().preparar(robot.getOrden().conQueso(0), robot.getOrden().vegetariana(1)));
     }
 
 }
