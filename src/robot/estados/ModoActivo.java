@@ -1,15 +1,19 @@
 package robot.estados;
 
 import robot.estados.menus.*;
+import states.menus.Hamburguesa;
 
 public class ModoActivo implements Estado {
-    public void caminarHaciaElCliente(){}
-
-    public MenuItem tomarOrden(Menu menus){
-	    return null;
+    public void caminarHaciaElCliente() {
     }
 
-    public void cocinar(Hamburguesa item){}
+    public Hamburguesa tomarOrden(Menu menus) {
+        return null;
+    }
 
-    public void suspender(){}
+    public void cocinar(Hamburguesa item) {
+    }
+
+    public void suspender() {
+    }
 }

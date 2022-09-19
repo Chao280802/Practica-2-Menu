@@ -3,16 +3,18 @@ package robot.estados.menus;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Versatil implements Menu{
-    private String nombre="Hamburguesas del dia";
+import states.menus.Hamburguesa;
 
-    private ArrayList<MenuItem> alimentos;
+public class Versatil implements Menu {
+    private String nombre = "Hamburguesas del dia";
 
-    public String obtenerNombre(){
+    private ArrayList<Hamburguesa> alimentos;
+
+    public String obtenerNombre() {
         return this.nombre;
     }
 
-    public Iterator<MenuItem> obtenerIterador(){
+    public Iterator<Hamburguesa> obtenerIterador() {
         return alimentos.iterator();
     }
 }
