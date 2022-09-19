@@ -18,7 +18,15 @@ public class TeriyakiMango extends Hamburguesa {
         this.nombre = "Hamburguesa teriyakiMango";
         this.descripcion = "Hamburguesa de res cortado en finas rebanadas sazonadas con salsa teriyaki, rico mango preparado a la forma de la casa y un toque de especias ";
         this.precio = 55;
+    }
 
+    @Override
+    public String preparar(boolean conQueso, boolean vegetariana){
+        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
+        if(this.conQueso)
+            preparacion+=this.ponerQueso()+"\n";
+        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+        return preparacion;
     }
 
     @Override

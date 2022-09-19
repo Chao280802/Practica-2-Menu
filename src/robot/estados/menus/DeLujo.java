@@ -9,8 +9,8 @@ public class DeLujo implements Menu{
 
     public DeLujo(){
         this.alimentos.put(Integer.valueOf(0),new DragonStar());
-        this.alimentos.put(Integer.valueOf(1),new DragonStar());
-        this.alimentos.put(Integer.valueOf(2),new DragonStar());
+        this.alimentos.put(Integer.valueOf(1),new TeriyakiMango());
+        this.alimentos.put(Integer.valueOf(2),new Artesanal());
     }
 
     public String obtenerNombre(){
@@ -29,7 +29,7 @@ public class DeLujo implements Menu{
         }
 
         public Hamburguesa next(){
-            return alimentos.get(Integer.valueOf(indiceActual));
+            return alimentos.get(Integer.valueOf(indiceActual++));
         }
     }
 }
