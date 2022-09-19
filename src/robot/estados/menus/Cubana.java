@@ -1,6 +1,4 @@
-package states.menus;
-
-import states.menus.Hamburguesa;
+package robot.estados.menus;
 
 public class Cubana extends Hamburguesa {
 

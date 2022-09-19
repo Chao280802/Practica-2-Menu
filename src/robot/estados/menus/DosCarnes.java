@@ -1,5 +1,4 @@
-import states.menus.Hamburguesa;
-package states.menus;
+package robot.estados.menus;
 
 public class DosCarnes extends Hamburguesa {
 

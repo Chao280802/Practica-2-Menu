@@ -1,4 +1,4 @@
-package states.menus;
+package robot.estados.menus;
 
 public class BigB extends Hamburguesa {
 
