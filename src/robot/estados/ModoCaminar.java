@@ -17,38 +17,46 @@ public class ModoCaminar implements EstadoRobot {
 
     @Override
     public void suspender() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot pasará a modo suspendido ");
+        System.out.println("**MODO CAMINAR** ----> **MODO SUSPENDER**");
+        robot.asignaNuevoEstado(robot.getModoSuspendido());
     }
 
     @Override
     public void activar() {
-        // TODO Auto-generated method stub
+        System.out.println("El robot ya está encendido, permanecerá en: " + 
+            "**MODO CAMINANR**");
 
     }
 
     @Override
     public void caminar() {
-        // TODO Auto-generated method stub
+        System.out.println("El  robot  ya  está en:  **MODO CAMINANNDO**");
 
     }
 
     @Override
     public void tomarOrden() {
-        // TODO Auto-generated method stub
-
+        if(robot.getRobotMesaCliente()){
+            System.out.println("El robot  ha llegado a  la mesa del cliente y tomará su orden.");
+            robot.asignaNuevoEstado(robot.getModoTomarOrden());
+            System.out.println("**MODO CAMINAR** ----> **MODO TOMAR ORDEN**");
+        } else {
+            System.out.println("El robot aún no llega a la mesa del cliente permanecerá en: ");
+            System.out.println(" **MODO CAMINAR**");
+        }
     }
 
     @Override
     public void cocinar() {
-        // TODO Auto-generated method stub
+        System.out.println("El robot no puede cocinar mientras camina, permanecerá en:");
+        System.out.println("**MODO CAMINAR**");
 
     }
 
     @Override
     public void entregarOrden() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El  robot  aun no está en la mesa del cliente.");
     }
 
     @Override

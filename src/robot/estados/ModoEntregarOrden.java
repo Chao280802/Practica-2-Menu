@@ -21,38 +21,39 @@ public class ModoEntregarOrden implements EstadoRobot {
 
     @Override
     public void suspender() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot  está entregandno una orden  y no puede suspenderse, permanecera en: ");
+        System.out.println("**MODO ENTREGAR ORDEN**");
     }
 
     @Override
     public void activar() {
-        // TODO Auto-generated method stub
+        System.out.println("El robot ya esta activo y esta en: ");
+        System.out.println("**MODO  ENTREGAR ORDEN**");
 
     }
 
     @Override
     public void caminar() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot no puede caminar porque no ha terminado de entregar la orden: ");
+        System.out.println("**MODO ENTREGAR ORDEN**");
     }
 
     @Override
     public void tomarOrden() {
-        // TODO Auto-generated method stub
-
+        System.out.println("EL robot no puede tomar una orden, porque ya está entregando una permanecerá en: ");
+        System.out.println("**MODO ENTREGAR ORDEN**");
     }
 
     @Override
     public void cocinar() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot no puede cocinar porque está entregando una orden, permanecerá en: ");
+        System.out.println("**MODO ENTREGAR ORDEN**");
     }
 
     @Override
     public void entregarOrden() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot ya está en: ");
+        System.out.println("**MODO ENTREGAR ORDEN**");
     }
 
     @Override

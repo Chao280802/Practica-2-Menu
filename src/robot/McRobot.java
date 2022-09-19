@@ -11,6 +11,9 @@ public class McRobot {
 
     private boolean hayCliente;
     private boolean robotEnMesaCliente;
+    private boolean ordenTomada;
+    private boolean platilloListo;
+    private boolean ordenFilanizada;
 
     private ModoSuspendido modoSuspendido;
     private ModoActivo modoActivo;
@@ -33,6 +36,10 @@ public class McRobot {
         modoEntregarOrden = new ModoEntregarOrden(this);
 
         this.estadoActual = this.modoSuspendido;
+        this.hayCliente = false;
+        this.robotEnMesaCliente = false;
+        this.ordenTomada = false;
+        this.platilloListo  =  false;
     }
 
     public boolean getHayCliente() {
@@ -73,5 +80,17 @@ public class McRobot {
 
     public String getEstadoActual() {
         return estadoActual.toString();
+    }
+
+    public boolean getOrdenTomada(){
+        return this.ordenTomada;
+    }
+
+    public boolean getPlatilloListo(){
+        return this.platilloListo;
+    }
+
+    public boolean getOrdenFinalizada(){
+        return this.ordenFilanizada;
     }
 }

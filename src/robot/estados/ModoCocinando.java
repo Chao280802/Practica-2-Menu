@@ -21,38 +21,45 @@ public class ModoCocinando implements EstadoRobot {
 
     @Override
     public void suspender() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot no puede suspenderse si está cocinando y permanecerá en: ");
+        System.out.println("**MODO COCINANDO**");
     }
 
     @Override
     public void activar() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot ya está activo y se encuentra en: ");
+        System.out.println("**MODO CAMINANDO**");
     }
 
     @Override
     public void caminar() {
-        // TODO Auto-generated method stub
+        System.out.println("El robot no puede caminar mientras está cocinando, permanecerá en: ");
+        System.out.println("**MODO COCINANDO**");
 
     }
 
     @Override
     public void tomarOrden() {
-        // TODO Auto-generated method stub
+        System.out.println("El robot  aún sigue cocinando  y no puede tomar una nueva orden,  permanecerá en: ");
+        System.out.println("**MODO COCINANDO**");
 
     }
 
     @Override
     public void cocinar() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot ya se encuentra en: ");
+        System.out.println("**MODO COCINANDO**");
     }
 
     @Override
     public void entregarOrden() {
-        // TODO Auto-generated method stub
-
+        if(robot.getPlatilloListo()){
+            System.out.println("El robot ha terminando de preparar el platillo, ahora lo entregará al cliente ");
+            System.out.println("**MODO COCINANDO** ----> **MODO ENTREGAR ORDEN**");
+        } else {
+            System.out.println("El robot aún  no terminan el platillo, seguirá en");
+            System.out.println("**MODO COCINANDO**");
+        }
     }
 
     @Override

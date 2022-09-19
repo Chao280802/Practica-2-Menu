@@ -21,38 +21,46 @@ public class ModoTomarOrden implements EstadoRobot {
 
     @Override
     public void suspender() {
-        // TODO Auto-generated method stub
+        System.out.println("El robot está  tomado una orden y no puede suspenderse, permanecera en: ");
+        System.out.println("**MODO TOMAR ORDEN**");
 
     }
 
     @Override
     public void activar() {
-        // TODO Auto-generated method stub
+        System.out.println("El robot ya está activo y está en: ");
+        System.out.println("**MODO TOMAR ORDEN**");
 
     }
 
     @Override
     public void caminar() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot no puede caminar mientras toma una orden permanencerá en: ");
+        System.out.println("**MODO TOMAR ORDEN**");
     }
 
     @Override
     public void tomarOrden() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot ya está tomando una orden");
     }
 
     @Override
     public void cocinar() {
-        // TODO Auto-generated method stub
+        if (robot.getOrdenTomada()) {
+            System.out.println("El robot ya termió de tomar la orden y se pondrá a cocinar: ");
+            robot.asignaNuevoEstado(robot.getModoCocinar());
+            System.out.println("MODO TOMAR ORDENN ----> MODO COCINAR");
+        } else {
+            System.out.println("El robot aún no  termina de tomar la orden, permanencerá en: ");
+            System.out.println("**MODO TOMAR ORDEN**");
+        }
 
     }
 
     @Override
     public void entregarOrden() {
-        // TODO Auto-generated method stub
-
+        System.out.println("El robot no puede entregar una orden porque está tomando una orden, permanecerá en: ");
+        System.out.println("**MODO TOMAR ORDEN**");
     }
 
     @Override
