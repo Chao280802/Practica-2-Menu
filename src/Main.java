@@ -1,6 +1,6 @@
 import robot.McRobot;
 
-public class Main{
+public class Main {
 
     /**
      * 
@@ -11,6 +11,6 @@ public class Main{
 
         System.out.println("Bienvenido al restaurante McHamburgesas...");
         System.out.println("Nuestro McRobot lo estará atendiendo");
-
+        System.out.println("Actualmenete el robot esta en modo " + robot.getEstadoActual());
     }
 }

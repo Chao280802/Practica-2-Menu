@@ -1,14 +1,16 @@
 package robot;
+
 import robot.estados.*;
 
 /**
  * Clase que representa a un Robot del restaurante McHamburgesas.
  */
-public class McRobot{
+public class McRobot {
 
     private EstadoRobot estadoActual;
 
     private boolean hayCliente;
+    private boolean robotEnMesaCliente;
 
     private ModoSuspendido modoSuspendido;
     private ModoActivo modoActivo;
@@ -20,7 +22,7 @@ public class McRobot{
     /**
      * Constructor de un McRobot, inicializa el robot en un estado suspendido.
      */
-    public McRobot(){
+    public McRobot() {
         hayCliente = false;
 
         modoSuspendido = new ModoSuspendido(this);
@@ -29,38 +31,47 @@ public class McRobot{
         modoTomarOrden = new ModoTomarOrden(this);
         modoCocinando = new ModoCocinando(this);
         modoEntregarOrden = new ModoEntregarOrden(this);
+
+        this.estadoActual = this.modoSuspendido;
     }
 
-    public boolean getHayCliente(){
+    public boolean getHayCliente() {
         return this.hayCliente;
     }
 
-    public void asignaNuevoEstado(EstadoRobot nuevoEstado){
+    public boolean getRobotMesaCliente() {
+        return this.robotEnMesaCliente;
+    }
+
+    public void asignaNuevoEstado(EstadoRobot nuevoEstado) {
         this.estadoActual = nuevoEstado;
     }
 
-    public EstadoRobot getModoSuspendido(){
+    public EstadoRobot getModoSuspendido() {
         return this.modoSuspendido;
     }
 
-    public EstadoRobot getModoActivo(){
+    public EstadoRobot getModoActivo() {
         return this.modoActivo;
     }
 
-    public EstadoRobot getModoCaminar(){
+    public EstadoRobot getModoCaminar() {
         return this.modoCaminar;
     }
 
-    public EstadoRobot getModoTomarOrden(){
+    public EstadoRobot getModoTomarOrden() {
         return this.modoTomarOrden;
     }
 
-    public EstadoRobot getModoCocinar(){
+    public EstadoRobot getModoCocinar() {
         return this.modoCocinando;
     }
 
-    public EstadoRobot getModoEntregarOrden(){
+    public EstadoRobot getModoEntregarOrden() {
         return this.modoEntregarOrden;
     }
 
+    public String getEstadoActual() {
+        return estadoActual.toString();
+    }
 }
