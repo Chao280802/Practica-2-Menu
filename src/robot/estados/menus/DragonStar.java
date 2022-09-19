@@ -23,10 +23,10 @@ public class DragonStar extends Hamburguesa {
 
     @Override
     public String preparar(boolean conQueso, boolean vegetariana){
-        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
+        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.ponerJalapenio()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
         if(this.conQueso)
             preparacion+=this.ponerQueso()+"\n";
-        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerMiel()+"\n"+this.ponerPan()+"\n"+this.empanizandolaEntera()+"\n";
         return preparacion;
     }
 

@@ -74,6 +74,7 @@ public class Main {
                     break;
             }
 
-        } while (opcion != 0);
+        } while (opcion != 7);
+        sc.close();
     }
 }
