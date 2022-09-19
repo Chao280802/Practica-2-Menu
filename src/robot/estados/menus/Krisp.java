@@ -25,19 +25,17 @@ public class Krisp extends Hamburguesa {
         String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
         if(this.conQueso)
             preparacion+=this.ponerQueso()+"\n";
-        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+        preparacion+=this.ponerVegetales()+"\n"+this.ponerArosDeCebolla()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
         return preparacion;
     }
 
     @Override
     public String prepararProteina() {
-
         return "Estoy preparando la carne";
     }
 
     @Override
     public String ponerProteina() {
-
         return "Estoy poniendo la carne";
     }
 

@@ -25,7 +25,7 @@ public class Tradicional implements Menu {
         int indiceActual = 0;
 
         public boolean hasNext() {
-            return indiceActual < alimentos.length - 1;
+            return indiceActual < alimentos.length;
         }
 
         public Hamburguesa next() {
