@@ -59,5 +59,4 @@ public class ModoSuspendido implements EstadoRobot {
     public String toString() {
         return "El robot está en modo **SUSPENDIDO**";
     }
-
 }
