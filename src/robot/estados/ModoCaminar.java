@@ -37,14 +37,9 @@ public class ModoCaminar implements EstadoRobot {
 
     @Override
     public void tomarOrden() {
-        if(robot.getRobotMesaCliente()){
             System.out.println("El robot  ha llegado a  la mesa del cliente y tomará su orden.");
             robot.asignaNuevoEstado(robot.getModoTomarOrden());
             System.out.println("**MODO CAMINAR** ----> **MODO TOMAR ORDEN**");
-        } else {
-            System.out.println("El robot aún no llega a la mesa del cliente permanecerá en: ");
-            System.out.println(" **MODO CAMINAR**");
-        }
     }
 
     @Override

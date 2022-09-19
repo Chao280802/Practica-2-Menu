@@ -12,7 +12,7 @@ public class Main {
 
         System.out.println("Bienvenido al restaurante McHamburgesas...");
         System.out.println("Nuestro McRobot lo estará atendiendo");
-        System.out.println("Actualmenete el robot esta en modo " + robot.getEstadoActual());
+        System.out.println("Actualmenete " + robot.getEstadoActual());
         System.out.println("Por favor elige la opción que deseas ejecutar: ");
         Scanner sc = new Scanner(System.in); 
         int opcion;
@@ -36,11 +36,11 @@ public class Main {
                         System.out.println("Por favor elige una opción VALIDA \n" +
                             "1 .- **MODO ACTIVO** \n" + 
                             "2 .- **MODO SUSPENDIDO** \n" + 
-                            "3 .- **MODO CAMINAR**" +  
-                            "4 .- **MODO TOMAR ORDEN**" +
-                            "5 .- **MODO COCINAR**" +
-                            "6 .- **MODO ENTREGAR ORDEN" + 
-                            "7 .- **SALIR**"); 
+                            "3 .- **MODO CAMINAR** \n" +  
+                            "4 .- **MODO TOMAR ORDEN** \n" +
+                            "5 .- **MODO COCINAR** \n" +
+                            "6 .- **MODO ENTREGAR ORDEN** \n" + 
+                            "7 .- **SALIR** \n"); 
                     }
                 }
 
@@ -74,6 +74,6 @@ public class Main {
                     break;
             }
 
-        } while (opcion != 0);
+        } while (opcion != 7);
     }
 }

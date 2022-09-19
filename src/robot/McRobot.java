@@ -9,12 +9,6 @@ public class McRobot {
 
     private EstadoRobot estadoActual;
 
-    private boolean hayCliente;
-    private boolean robotEnMesaCliente;
-    private boolean ordenTomada;
-    private boolean platilloListo;
-    private boolean ordenFilanizada;
-
     private ModoSuspendido modoSuspendido;
     private ModoActivo modoActivo;
     private ModoCaminar modoCaminar;
@@ -26,8 +20,6 @@ public class McRobot {
      * Constructor de un McRobot, inicializa el robot en un estado suspendido.
      */
     public McRobot() {
-        hayCliente = false;
-
         modoSuspendido = new ModoSuspendido(this);
         modoActivo = new ModoActivo(this);
         modoCaminar = new ModoCaminar(this);
@@ -36,10 +28,6 @@ public class McRobot {
         modoEntregarOrden = new ModoEntregarOrden(this);
 
         this.estadoActual = this.modoSuspendido;
-        this.hayCliente = false;
-        this.robotEnMesaCliente = false;
-        this.ordenTomada = false;
-        this.platilloListo  =  false;
     }
 
     public void suspender(){
@@ -64,14 +52,6 @@ public class McRobot {
 
     public void entregarOrden(){
         estadoActual.entregarOrden();
-    }
-
-    public boolean getHayCliente() {
-        return this.hayCliente;
-    }
-
-    public boolean getRobotMesaCliente() {
-        return this.robotEnMesaCliente;
     }
 
     public void asignaNuevoEstado(EstadoRobot nuevoEstado) {
@@ -104,17 +84,5 @@ public class McRobot {
 
     public String getEstadoActual() {
         return estadoActual.toString();
-    }
-
-    public boolean getOrdenTomada(){
-        return this.ordenTomada;
-    }
-
-    public boolean getPlatilloListo(){
-        return this.platilloListo;
-    }
-
-    public boolean getOrdenFinalizada(){
-        return this.ordenFilanizada;
     }
 }

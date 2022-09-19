@@ -53,13 +53,9 @@ public class ModoCocinando implements EstadoRobot {
 
     @Override
     public void entregarOrden() {
-        if(robot.getPlatilloListo()){
-            System.out.println("El robot ha terminando de preparar el platillo, ahora lo entregará al cliente ");
-            System.out.println("**MODO COCINANDO** ----> **MODO ENTREGAR ORDEN**");
-        } else {
-            System.out.println("El robot aún  no terminan el platillo, seguirá en");
-            System.out.println("**MODO COCINANDO**");
-        }
+        System.out.println("El robot ha terminando de preparar el platillo, ahora lo entregará al cliente ");
+        System.out.println("**MODO COCINANDO** ----> **MODO ENTREGAR ORDEN**");
+        robot.asignaNuevoEstado(robot.getModoEntregarOrden());
     }
 
     @Override

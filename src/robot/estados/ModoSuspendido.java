@@ -26,13 +26,9 @@ public class ModoSuspendido implements EstadoRobot {
 
     @Override
     public void activar() {
-        if (robot.getHayCliente()) {
-            robot.asignaNuevoEstado(robot.getModoActivo());
-            System.out.println("**MODO SUSPENDIDO ----> MODO ACTIVO**");
-            System.out.println("Ahora el robot está en: **MODO ACTIVO**");
-        } else {
-            System.out.println("Aún no ha llegado un cliente el robot seguirá en: **MODO SUSPENDIDO**");
-        }
+        robot.asignaNuevoEstado(robot.getModoActivo());
+        System.out.println("**MODO SUSPENDIDO ----> MODO ACTIVO**");
+        System.out.println("Ahora el robot está en: **MODO ACTIVO**");
     }
 
     @Override
