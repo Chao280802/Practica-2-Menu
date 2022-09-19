@@ -42,6 +42,30 @@ public class McRobot {
         this.platilloListo  =  false;
     }
 
+    public void suspender(){
+        estadoActual.suspender();
+    }
+
+    public void activar(){
+        estadoActual.activar();
+    }
+
+    public void caminar(){
+        estadoActual.caminar();
+    }
+
+    public void tomarOrden(){
+        estadoActual.tomarOrden();
+    }
+
+    public void cocinar(){
+        estadoActual.cocinar();
+    }
+
+    public void entregarOrden(){
+        estadoActual.entregarOrden();
+    }
+
     public boolean getHayCliente() {
         return this.hayCliente;
     }
