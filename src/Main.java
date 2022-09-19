@@ -1,12 +1,11 @@
 import robot.McRobot;
 import java.util.Scanner;
 
+/**
+ * Clase principal del restaurante McHamburgesas
+ */
 public class Main {
 
-    /**
-     * 
-     * @param args
-     */
     public static void main(String[] args) {
         McRobot robot = new McRobot();
 
