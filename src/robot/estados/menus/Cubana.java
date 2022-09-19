@@ -22,23 +22,28 @@ public class Cubana extends Hamburguesa {
     }
 
     @Override
-    public String preparar(boolean conQueso, boolean vegetariana){
-        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
-        if(this.conQueso)
-            preparacion+=this.ponerQueso()+"\n";
-        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+    public String preparar(boolean conQueso, boolean vegetariana) {
+        String preparacion = this.ponerPan() + "\n" + this.ponerMayonesa() + "\n" + this.ponerMostaza() + "\n"
+                + this.prepararProteina() + "\n" + this.ponerProteina() + "\n";
+        if (this.conQueso)
+            preparacion += this.ponerQueso() + "\n";
+        preparacion += this.ponerVegetales() + "\n" + this.ponerCatsup() + "\n" + this.ponerPan();
         return preparacion;
     }
 
     @Override
     public String prepararProteina() {
-        return "Estoy preparando la carne";
+        if (!this.vegetariana)
+            return "Estoy preparando la carne";
+        return "Estoy preparando el sustituto de carne";
 
     }
 
     @Override
     public String ponerProteina() {
-        return "Estoy poniendo la carne";
+        if (!this.vegetariana)
+            return "Estoy poniendo la carne\n" + this.ponerSalchicha() + this.ponerHuevo();
+        return "Estoy poniendo el sustituto de carne";
 
     }
 
