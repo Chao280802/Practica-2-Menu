@@ -19,20 +19,25 @@ public class ModoActivo implements EstadoRobot{
 
     @Override
     public void suspender() {
-        // TODO Auto-generated method stub
-        
+        if (!robot.getHayCliente()) {
+            robot.asignaNuevoEstado(robot.getModoSuspendido());
+            System.out.println("El Robot ha completado todas sus tareas: **MODO ACTIVO -----> MODO SUSPENDIDO**");
+            System.out.println("Ahora el Robot está en: **MODO SUSPENDIDO**");
+        } else {
+            System.out.println("Aún hay tareas en curso y el robot no se puede suspender seguirá en: **MODO ACTIVO.");
+        }
     }
 
     @Override
     public void activar() {
-        // TODO Auto-generated method stub
-        
+        System.out.println("El Robot ya está en: **MODO ACTIVO**");
     }
 
     @Override
     public void caminar() {
-        // TODO Auto-generated method stub
-        
+        if (robot.getHayCliente()) {
+            System.out.println("El robot caminará hacia la mesa del cliente:");
+        }
     }
 
     @Override

@@ -39,8 +39,28 @@ public class McRobot{
         this.estadoActual = nuevoEstado;
     }
 
-    public EstadoRobot getEstadoSuspendido(){
+    public EstadoRobot getModoSuspendido(){
         return this.modoSuspendido;
+    }
+
+    public EstadoRobot getModoActivo(){
+        return this.modoActivo;
+    }
+
+    public EstadoRobot getModoCaminar(){
+        return this.modoCaminar;
+    }
+
+    public EstadoRobot getModoTomarOrden(){
+        return this.modoTomarOrden;
+    }
+
+    public EstadoRobot getModoCocinar(){
+        return this.modoCocinando;
+    }
+
+    public EstadoRobot getModoEntregarOrden(){
+        return this.modoEntregarOrden;
     }
 
 }

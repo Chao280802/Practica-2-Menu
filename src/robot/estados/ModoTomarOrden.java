@@ -10,7 +10,7 @@ public class ModoTomarOrden implements EstadoRobot{
     McRobot robot;
 
     /**
-     * Constructor del ModoTomarOrden asigna al robot que adquirirá este modo
+     * Constructor del ModoEntregarOrden asigna al robot que adquirirá este modo
      * @param robot robot que adquirirá el modo
      */
     public ModoTomarOrden(McRobot robot){
