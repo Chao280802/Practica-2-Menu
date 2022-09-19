@@ -2,10 +2,6 @@ package robot.estados.menus;
 
 import java.util.Iterator;
 
-import states.menus.BigB;
-import states.menus.Hamburguesa;
-import states.menus.Hawaiana;
-
 public class Tradicional implements Menu {
 
     public Tradicional() {

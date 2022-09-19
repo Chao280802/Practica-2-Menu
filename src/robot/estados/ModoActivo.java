@@ -1,7 +1,6 @@
 package robot.estados;
 
 import robot.estados.menus.*;
-import states.menus.Hamburguesa;
 
 public class ModoActivo implements Estado {
     public void caminarHaciaElCliente() {

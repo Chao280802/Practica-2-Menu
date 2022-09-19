@@ -3,12 +3,6 @@ package robot.estados.menus;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import states.menus.Cubana;
-import states.menus.DosCarnes;
-import states.menus.Hamburguesa;
-import states.menus.Hawaiana;
-import states.menus.Krisp;
-
 public class Versatil implements Menu {
 
     public Versatil() {
