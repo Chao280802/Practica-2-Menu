@@ -1,6 +1,5 @@
 package robot;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 import robot.estados.menus.Hamburguesa;

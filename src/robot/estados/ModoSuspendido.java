@@ -1,8 +1,6 @@
 package robot.estados;
 
 import robot.McRobot;
-import java.util.LinkedList;
-import robot.estados.menus.Menu;
 
 /**
  * Clase que define el comportamiento del robot cuanto esta en modo:
