@@ -87,6 +87,7 @@ public class Main {
             }
 
         } while (opcion != 7);
+        sc.close();
     }
 
     public static LinkedList<Menu> submenus(Menu deLujo, Menu versatil, Menu Tradicional){

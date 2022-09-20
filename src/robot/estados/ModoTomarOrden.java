@@ -144,5 +144,6 @@ public class ModoTomarOrden implements EstadoRobot {
         }
         robot.setIdOrden(hamburguesa);
         System.out.println("Tu pedido ha sido tomado con éxito.");
+        entrada.close();
     }
 }
