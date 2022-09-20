@@ -4,15 +4,14 @@ public class BigB extends Hamburguesa {
 
     // Esta hamburguesa es una normal por eso no se ponen metodos extra
 
-    public BigB(int id, String nombre, String descripcion, int precio, int conQuesoRespuesta,
-            int vegetarianaRespuesta) {
+    public BigB(int id, String nombre, String descripcion, int precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         /* Adentro del metodo se inicializa la variable OwO */
-        this.conQueso(conQuesoRespuesta);
-        this.vegetariana(vegetarianaRespuesta);
+        this.conQueso = true;
+        this.vegetariana = false;
     }
 
     public BigB() {
@@ -20,11 +19,12 @@ public class BigB extends Hamburguesa {
         this.nombre = "Hamburguesa BigB";
         this.descripcion = "Hamburguesa de res basica";
         this.precio = 40;
-
+        this.conQueso = true;
+        this.vegetariana = false;
     }
 
     @Override
-    public String preparar(boolean conQueso, boolean vegetariana) {
+    public String preparar() {
         String preparacion = this.ponerPan() + "\n" + this.ponerMayonesa() + "\n" + this.ponerMostaza() + "\n"
                 + this.prepararProteina() + "\n" + this.ponerProteina() + "\n";
         if (this.conQueso)
@@ -35,16 +35,12 @@ public class BigB extends Hamburguesa {
 
     @Override
     public String prepararProteina() {
-        if (!this.vegetariana)
-            return "Estoy preparando la carne";
-        return "Estoy preparando el sustituto de la carne";
+        return "Estoy preparando la carne";
     }
 
     @Override
     public String ponerProteina() {
-        if (!this.vegetariana)
-            return "Estoy poniendo la carne";
-        return "Estoy poniendo el sustituto de carne";
+        return "Estoy poniendo la carne";
     }
 
 }

@@ -2,15 +2,14 @@ package robot.estados.menus;
 
 public class Mexicana extends Hamburguesa {
 
-    public Mexicana(int id, String nombre, String descripcion, int precio, int conQuesoRespuesta,
-            int vegetarianaRespuesta) {
+    public Mexicana(int id, String nombre, String descripcion, int precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         // Adentro del metodo se inicializa la variable OwO
-        this.conQueso(conQuesoRespuesta);
-        this.vegetariana(vegetarianaRespuesta);
+        this.conQueso = false;
+        this.vegetariana = false;
     }
 
     public Mexicana() {
@@ -18,11 +17,12 @@ public class Mexicana extends Hamburguesa {
         this.nombre = "Hamburguesa Mexicana";
         this.descripcion = "Hamburguesa de arrachera, guacamole totopos y crema con especias haciendo referencia a los chilaquiles  ";
         this.precio = 55;
-
+        this.conQueso = false;
+        this.vegetariana = false;
     }
 
     @Override
-    public String preparar(boolean conQueso, boolean vegetariana){
+    public String preparar(){
         String preparacion = this.ponerPan()+"\n"+this.ponerCremaConEspecias()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
         if(this.conQueso)
             preparacion+=this.ponerQueso()+"\n";
@@ -32,16 +32,12 @@ public class Mexicana extends Hamburguesa {
 
     @Override
     public String prepararProteina() {
-        if (!this.vegetariana)
-            return "Estoy preparando la arrachera";
-        return "Estoy preparando el sustituto de arrachera";
+        return "Estoy preparando la arrachera";
     }
 
     @Override
     public String ponerProteina() {
-        if (!this.vegetariana)
-            return "Estoy poniendo la arrachera";
-        return "Estoy poniendo el sustituto de carne";
+        return "Estoy poniendo la arrachera";
     }
 
     public String ponerGuacamole() {
