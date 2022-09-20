@@ -126,26 +126,54 @@ public abstract class Hamburguesa {
         return "Estoy poniendo Mayonesa";
     }
 
+    /**
+     * Método que simboliza agregarle mostaza a la hamburguesa
+     * @return Devuelve un String que anuncia que esta colocando la mostaza a la hamburguesa
+     */
     public String ponerMostaza() {
-        return " Estoy poniendo Mostaza";
+        return "Estoy poniendo Mostaza";
     }
 
+    /**
+     * Método abstracto que anuncia la preparación de la proteina principal de la hamburguesa
+     * @return Devuelve un String que detalla que proteína se esta preparando para la hamburguesa
+     */
     public abstract String prepararProteina();
 
+    /**
+     * Método abstracto que anuncia que se esta colocando la proteina principal de la hamburguesa
+     * @return Devuelve un String que detalla que proteína se esta colocando en la hamburguesa
+     */
     public abstract String ponerProteina();
 
+    /**
+     * Método que anuncia que se esta colocando queso en la hamburguesa
+     * @return Devuelve un String que anuncia que se esta colocando queso
+     */
     public String ponerQueso() {
         return "Estoy poniendo queso";
     }
 
+    /**
+     * Método que anuncia que se estan poniendo vegetales en la hamburguesa
+     * @return Devuelve un String que anuncia que se estan agregando vegetales a la hamburguesa
+     */
     public String ponerVegetales() {
         return "Estoy poniendo los vegetales";
     }
 
+    /**
+     * Método que anuncia que se esta agregando catsup a la hamburguesa
+     * @return Devuelve un String que anuncia que se esta poniendo catsup
+     */
     public String ponerCatsup() {
         return "Estoy poniendo la catsup";
     }
 
+    /**
+     * Método que compone un String que representa un objeto de esta clase para imprimir en pantalla
+     * @return Devuelve el String que representa a este objeto
+     */
     public String toString(){
         return "Nombre: " + nombre + "\n"
              + "ID: "+ id + "\n"
