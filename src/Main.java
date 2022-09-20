@@ -93,7 +93,6 @@ public class Main {
             }
 
         } while (opcion != 7);
-        sc.close();
     }
 
     /**
