@@ -34,7 +34,7 @@ public class ModoCocinando implements EstadoRobot {
     @Override
     public void activar() {
         System.out.println("El robot ya está activo y se encuentra en: ");
-        System.out.println("**MODO CAMINANDO**");
+        System.out.println("**MODO COCINANDO**");
     }
 
     /**
@@ -72,8 +72,12 @@ public class ModoCocinando implements EstadoRobot {
     @Override
     public void entregarOrden() {
         System.out.println("El robot ha terminando de preparar el platillo, ahora lo entregará al cliente ");
+        System.out.println("ñam ñam, el cliente se la come entera.");
         System.out.println("**MODO COCINANDO** ----> **MODO ENTREGAR ORDEN**");
-        robot.asignaNuevoEstado(robot.getModoEntregarOrden());
+        robot.asignaNuevoEstado(robot.getModoEntregarOrden());// Cambia a modo entregar orden
+        System.out.println("Por el momento el robot no tiene pedidos y permanecerá en:");
+        System.out.println("**MODO ENTREGAR ORDEN** ----> **MODO SUSPENDIDO**");
+        robot.asignaNuevoEstado(robot.getModoSuspendido());// Pasa a suspendido
     }
 
     /**
@@ -86,7 +90,7 @@ public class ModoCocinando implements EstadoRobot {
         return "El robot está en modo: **COCINANDO**";
     }
 
-    public void prepararPedido(){
+    public void prepararPedido() {
         System.out.println(robot.getOrden().preparar());
     }
 

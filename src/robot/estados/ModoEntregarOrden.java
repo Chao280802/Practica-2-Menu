@@ -26,7 +26,7 @@ public class ModoEntregarOrden implements EstadoRobot {
     public void suspender() {
         System.out.println("Orden completada, el robot se suspenderá: ");
         System.out.println("**MODO ENTREGAR ORDEN** ----> **MODO SUSPENDIDO**");
-        robot.asignaNuevoEstado(robot.getModoSuspendido());
+        robot.asignaNuevoEstado(robot.getModoSuspendido());// Pasa a modo suspendido
     }
 
     /**

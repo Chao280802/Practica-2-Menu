@@ -26,7 +26,7 @@ public class ModoCaminar implements EstadoRobot {
     public void suspender() {
         System.out.println("El robot pasará a modo suspendido ");
         System.out.println("**MODO CAMINAR** ----> **MODO SUSPENDER**");
-        robot.asignaNuevoEstado(robot.getModoSuspendido());
+        robot.asignaNuevoEstado(robot.getModoSuspendido());// Cambia a modo suspender
     }
 
     /**
@@ -34,8 +34,8 @@ public class ModoCaminar implements EstadoRobot {
      */
     @Override
     public void activar() {
-        System.out.println("El robot ya está encendido, permanecerá en: " + 
-            "**MODO CAMINANR**");
+        System.out.println("El robot ya está encendido, permanecerá en: " +
+                "**MODO CAMINANR**");
 
     }
 
@@ -54,11 +54,11 @@ public class ModoCaminar implements EstadoRobot {
     @Override
     public void tomarOrden() {
         System.out.println("El robot  ha llegado a  la mesa del cliente y tomará su orden.");
-        robot.asignaNuevoEstado(robot.getModoTomarOrden());
+        robot.asignaNuevoEstado(robot.getModoTomarOrden()); // Cambia a tomar orden
         System.out.println("**MODO CAMINAR** ----> **MODO TOMAR ORDEN**");
-        ModoTomarOrden modoTomarOrden = (ModoTomarOrden) robot.getModoTomarOrden();
-        modoTomarOrden.leerMenu();
-        modoTomarOrden.registraOrden();
+        ModoTomarOrden modoTomarOrden = (ModoTomarOrden) robot.getModoTomarOrden(); // Agarra TomarOrden
+        modoTomarOrden.leerMenu();// Lee el menú
+        modoTomarOrden.registraOrden();// Anota la orden
     }
 
     /**
@@ -68,7 +68,6 @@ public class ModoCaminar implements EstadoRobot {
     public void cocinar() {
         System.out.println("El robot no puede cocinar mientras camina, permanecerá en:");
         System.out.println("**MODO CAMINAR**");
-
     }
 
     /**
