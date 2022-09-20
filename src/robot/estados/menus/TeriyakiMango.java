@@ -17,6 +17,8 @@ public class TeriyakiMango extends Hamburguesa {
         this.nombre = "Hamburguesa teriyakiMango";
         this.descripcion = "Hamburguesa de sustituto de res cortado en finas rebanadas sazonadas con salsa teriyaki, rico mango preparado a la forma de la casa y un toque de especias ";
         this.precio = 55;
+        this.conQueso = false;
+        this.vegetariana=true;
     }
 
     @Override
