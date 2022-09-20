@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class Tradicional implements Menu {
 
     private String nombre = "Hamburguesas Tradicionales";
-    private Hamburguesa[] alimentos;
+    private Hamburguesa[] alimentos = new Hamburguesa[3];
 
     public Tradicional() {
         alimentos[0] = new Hawaiana();

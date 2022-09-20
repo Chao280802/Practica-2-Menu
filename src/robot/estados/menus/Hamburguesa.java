@@ -92,6 +92,13 @@ public abstract class Hamburguesa {
         return "Estoy poniendo la catsup";
     }
 
+    public String toString(){
+        return "Nombre: " + nombre + "\n"
+             + "ID: "+ id + "\n"
+             + "Descripción: " + descripcion + "\n"
+             + "Precio: $" + precio + "\n";        
+    }
+
     // Diferentes metodos de preparacion de hamburguesas
 
 }

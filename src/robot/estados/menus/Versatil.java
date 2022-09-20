@@ -5,15 +5,14 @@ import java.util.Iterator;
 
 public class Versatil implements Menu {
 
+    private String nombre = "Hamburguesas del dia";
+    private ArrayList<Hamburguesa> alimentos = new ArrayList<Hamburguesa>();
+
     public Versatil() {
         alimentos.add(new DosCarnes());
         alimentos.add(new Cubana());
         alimentos.add(new Mexicana());
     }
-
-    private String nombre = "Hamburguesas del dia";
-
-    private ArrayList<Hamburguesa> alimentos;
 
     public String obtenerNombre() {
         return this.nombre;
