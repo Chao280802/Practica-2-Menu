@@ -90,11 +90,8 @@ public class ModoCocinando implements EstadoRobot {
         return "El robot está en modo: **COCINANDO**";
     }
 
-    /**
-     * Imprime en pantalla como es que se va preparando el pedido del cliente.
-     */
     public void prepararPedido() {
-        System.out.println(robot.getOrden().preparar(robot.getOrden().conQueso(0), robot.getOrden().vegetariana(1)));
+        System.out.println(robot.getOrden().preparar());
     }
 
 }
