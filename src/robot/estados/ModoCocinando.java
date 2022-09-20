@@ -91,7 +91,7 @@ public class ModoCocinando implements EstadoRobot {
     }
 
     public void prepararPedido(){
-        System.out.println(robot.getOrden().preparar(robot.getOrden().conQueso(0), robot.getOrden().vegetariana(1)));
+        System.out.println(robot.getOrden().preparar());
     }
 
 }

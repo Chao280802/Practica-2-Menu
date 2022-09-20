@@ -2,15 +2,14 @@ package robot.estados.menus;
 
 public class Cubana extends Hamburguesa {
 
-    public Cubana(int id, String nombre, String descripcion, int precio, int conQuesoRespuesta,
-            int vegetarianaRespuesta) {
+    public Cubana(int id, String nombre, String descripcion, int precio) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
         // Adentro del metodo se inicializa la variable OwO
-        this.conQueso(conQuesoRespuesta);
-        this.vegetariana(vegetarianaRespuesta);
+        this.conQueso = true;
+        this.vegetariana = false;
     }
 
     public Cubana() {
@@ -18,12 +17,13 @@ public class Cubana extends Hamburguesa {
         this.nombre = "Hamburguesa Cubana";
         this.descripcion = "Hamburguesa de res combinada con huevo y salchicha. Con una porcion de salsa picante ";
         this.precio = 50;
-
+        this.conQueso = true;
+        this.vegetariana = false;
     }
 
     @Override
-    public String preparar(boolean conQueso, boolean vegetariana){
-        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n"+this.ponerHuevo()+"\n";
+    public String preparar(){
+        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.ponerHuevo()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n"+this.ponerHuevo()+"\n";
         if(this.conQueso)
             preparacion+=this.ponerQueso()+"\n";
         preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerSalsaPicante()+"\n"+this.ponerPan();
@@ -32,16 +32,12 @@ public class Cubana extends Hamburguesa {
 
     @Override
     public String prepararProteina() {
-        if (!this.vegetariana)
-            return "Estoy preparando la carne";
-        return "Estoy preparando el sustituto de carne";
+        return "Estoy preparando la carne";
     }
 
     @Override
     public String ponerProteina() {
-        if (!this.vegetariana)
-            return "Estoy poniendo la carne\n" + this.ponerSalchicha() + this.ponerHuevo();
-        return "Estoy poniendo el sustituto de carne";
+        return "Estoy poniendo la carne\n" + this.ponerSalchicha();
     }
 
     public String ponerSalchicha() {
@@ -55,5 +51,4 @@ public class Cubana extends Hamburguesa {
     public String ponerSalsaPicante() {
         return "Estoy poniendo la salsa picante";
     }
-
 }
