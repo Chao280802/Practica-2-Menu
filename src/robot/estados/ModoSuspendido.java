@@ -1,8 +1,6 @@
 package robot.estados;
 
 import robot.McRobot;
-import java.util.LinkedList;
-import robot.estados.menus.Menu;
 
 /**
  * Clase que define el comportamiento del robot cuanto esta en modo:
@@ -34,8 +32,9 @@ public class ModoSuspendido implements EstadoRobot {
      */
     @Override
     public void activar() {
-        robot.asignaNuevoEstado(robot.getModoActivo());
-        System.out.println("**MODO SUSPENDIDO ----> MODO ACTIVO**");
+        robot.asignaNuevoEstado(robot.getModoActivo());// Pasa a modo activo
+        System.out.println("El robot ha despertado y ha pasado de: ");
+        System.out.println("**MODO SUSPENDIDO** ----> **MODO ACTIVO**");
         System.out.println("Ahora el robot está en: **MODO ACTIVO**");
     }
 
@@ -60,7 +59,7 @@ public class ModoSuspendido implements EstadoRobot {
      */
     @Override
     public void cocinar() {
-        System.out.println("El robot está en: **MODO SUSPENDIDO y NO puede ponerse a Cocinar");
+        System.out.println("El robot está en: **MODO SUSPENDIDO** y NO puede ponerse a Cocinar");
     }
 
     /**
@@ -68,7 +67,7 @@ public class ModoSuspendido implements EstadoRobot {
      */
     @Override
     public void entregarOrden() {
-        System.out.println("El robot está en: **MODO SUSPENDIDO y NO puede entregar Ordenes.");
+        System.out.println("El robot está en: **MODO SUSPENDIDO** y NO puede entregar Ordenes.");
     }
 
     /**

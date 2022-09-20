@@ -7,7 +7,6 @@ import java.util.Scanner;
 
 import robot.estados.menus.Hamburguesa;
 import robot.estados.menus.Menu;
-
 import robot.McRobot;
 
 /**
@@ -71,9 +70,9 @@ public class ModoTomarOrden implements EstadoRobot {
      */
     @Override
     public void cocinar() {
-        System.out.println("El robot ya termió de tomar la orden y se pondrá a cocinar: ");
-        robot.asignaNuevoEstado(robot.getModoCocinar());
-        System.out.println("MODO TOMAR ORDENN ----> MODO COCINAR");
+        System.out.println("El robot ya termnió de tomar la orden y se pondrá a cocinar: ");
+        robot.asignaNuevoEstado(robot.getModoCocinar());// Modo cocinar.
+        System.out.println("**MODO TOMAR ORDEN** ----> **MODO COCINAR**");
         ModoCocinando modoCocinar = (ModoCocinando) robot.getModoCocinar();
         modoCocinar.prepararPedido();
     }
@@ -97,52 +96,62 @@ public class ModoTomarOrden implements EstadoRobot {
         return "El robot está en modo **MODO TOMAR ORDEN**";
     }
 
-    public void leerMenu(){
+    /**
+     * Imprime en pantalla el menu para que el cliente pueda ver las distintas
+     * opciones.
+     */
+    public void leerMenu() {
         Iterator<Menu> itMenu = this.menus.iterator();
-        while (itMenu.hasNext()) {
+        while (itMenu.hasNext()) { // Vamos recorriendo los menus.
             Menu tipoMenu = itMenu.next();
-            String tipoMenuStr = tipoMenu.obtenerNombre();
-            System.out.println("\n**" + tipoMenuStr.toUpperCase() + "**");
+            String tipoMenuStr = tipoMenu.obtenerNombre();// Obtenemos el nombre del menú.
+            System.out.println("\n**" + tipoMenuStr.toUpperCase() + "**"); // Imprimimos el nombre del menú.
             Iterator<Hamburguesa> itHamburgesa = tipoMenu.obtenerIterador();
-            while (itHamburgesa.hasNext()) {
+            while (itHamburgesa.hasNext()) { // Recorremos las hamburgesas de cada menu.
                 System.out.println(itHamburgesa.next());
             }
         }
     }
 
-    public void registraOrden(){
+    /**
+     * Registra la orden del cliente para que el robot pueda preparar el pedido.
+     */
+    public void registraOrden() {
         Scanner entrada = new Scanner(System.in);
         int id = -1;
         Hamburguesa hamburguesa = null;
         boolean salir = false;
         while (!salir) {
             while (true) {
-                try {
+                try { // Valida que el ID sea correcto.
                     System.out.println("Introduce el ID de la hamburgesa que deseas ordenar: ");
                     id = entrada.nextInt();
                     break;
                 } catch (InputMismatchException ime) {
-                    System.out.println("Elige una opción correcta");
+                    System.out.println("Elige una opción correcta, (tu puedes no es tan dificil)");
                     entrada.next();
-                }   
-            } 
+                }
+            }
             Iterator<Menu> itMenu = this.menus.iterator();
-            while (itMenu.hasNext()) {
+            while (itMenu.hasNext()) { // Busca en los menús el Id de la hamburguesa.
                 Menu tipoMenu = itMenu.next();
                 Iterator<Hamburguesa> itHamburgesa = tipoMenu.obtenerIterador();
-                while (itHamburgesa.hasNext()) { 
+                while (itHamburgesa.hasNext()) {
                     hamburguesa = itHamburgesa.next();
-                   salir = hamburguesa.obtenerId() == id;
-                   if (salir) {
+                    salir = hamburguesa.obtenerId() == id;
+                    if (salir) {
                         break;
-                   }
+                    }
                 }
-                if (salir){
-                    break;
-                }   
-            }   
+                if (salir) {
+                    break; // Si lo encuentra se sale.
+                }
+            }
+            if (!salir) {
+                System.out.println("ID no existente, intentelo de nuevo, (tu puedes no es tan dificil).");
+            }
         }
-        robot.setIdOrden(hamburguesa);
+        robot.setOrden(hamburguesa); // Asigna Orden al robot
         System.out.println("Tu pedido ha sido tomado con éxito.");
     }
 }

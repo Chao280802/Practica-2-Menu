@@ -1,8 +1,6 @@
 package robot.estados;
 
 import robot.McRobot;
-import java.util.LinkedList;
-import robot.estados.menus.Menu;
 
 /**
  * Clase que define el comportamiento del robot cuanto esta en modo: "Activo".
@@ -25,9 +23,9 @@ public class ModoActivo implements EstadoRobot {
      */
     @Override
     public void suspender() {
-            robot.asignaNuevoEstado(robot.getModoSuspendido());    
-            System.out.println("El Robot ha completado todas sus tareas: **MODO ACTIVO -----> MODO SUSPENDIDO**");
-            System.out.println("Ahora el Robot está en: **MODO SUSPENDIDO**");
+        robot.asignaNuevoEstado(robot.getModoSuspendido());// Se suspende
+        System.out.println("El Robot ha completado todas sus tareas: **MODO ACTIVO** -----> **MODO SUSPENDIDO**");
+        System.out.println("Ahora el Robot está en: **MODO SUSPENDIDO**");
     }
 
     /**
@@ -35,7 +33,6 @@ public class ModoActivo implements EstadoRobot {
      */
     @Override
     public void activar() {
-        
         System.out.println("El Robot ya está en: **MODO ACTIVO**");
     }
 
@@ -44,7 +41,7 @@ public class ModoActivo implements EstadoRobot {
      */
     @Override
     public void caminar() {
-        robot.asignaNuevoEstado(robot.getModoCaminar());
+        robot.asignaNuevoEstado(robot.getModoCaminar());// Cambia a modo Caminar
         System.out.println("El robot caminará hacia la mesa del cliente:");
         System.out.println("Ahora el robot esta en: **MODO CAMINAR**");
     }
@@ -55,7 +52,7 @@ public class ModoActivo implements EstadoRobot {
     @Override
     public void tomarOrden() {
         System.out.println("El  robot no está en la mesa de ningún cliente y no puede tomar " +
-            "ninguna orden");
+                "ninguna orden");
         System.out.println("El robot  permanecerá en: **MODO ACTIVO**");
     }
 
@@ -65,7 +62,7 @@ public class ModoActivo implements EstadoRobot {
     @Override
     public void cocinar() {
         System.out.println("El robot no ha tomado ningunan orden y por lo tanto no puede cocinar " +
-            " permanecerá en: **MODO ACTIVO**");
+                " permanecerá en: **MODO ACTIVO**");
     }
 
     /**
@@ -73,8 +70,8 @@ public class ModoActivo implements EstadoRobot {
      */
     @Override
     public void entregarOrden() {
-        System.out.println("El robot no ha cocinado nada y por lo tanto " + 
-            " permanerá en: **MODO ACTIVO**");
+        System.out.println("El robot no ha cocinado nada y por lo tanto " +
+                " permanerá en: **MODO ACTIVO**");
 
     }
 

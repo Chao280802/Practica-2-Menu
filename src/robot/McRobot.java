@@ -1,8 +1,6 @@
 package robot;
 
-import java.util.Iterator;
 import java.util.LinkedList;
-
 import robot.estados.menus.Hamburguesa;
 import robot.estados.menus.Menu;
 
@@ -41,47 +39,48 @@ public class McRobot {
     /**
      * El robot se suspenderá si su estado actual se lo permite.
      */
-    public void suspender(){
+    public void suspender() {
         estadoActual.suspender();
     }
 
     /**
      * El robot se activará si su estado actual se lo permite.
-     */ 
-    public void activar(){
+     */
+    public void activar() {
         estadoActual.activar();
     }
 
     /**
      * El robot caminará si su estgado actual se lo permite.
      */
-    public void caminar(){
+    public void caminar() {
         estadoActual.caminar();
     }
 
     /**
      * El robot tomará la orden del cliente si su estado actual se lo permite.
      */
-    public void tomarOrden(){
+    public void tomarOrden() {
         estadoActual.tomarOrden();
     }
 
     /**
      * El robot cocinará lo que el cliente pida, si su estado actual se lo permite.
      */
-    public void cocinar(){
+    public void cocinar() {
         estadoActual.cocinar();
     }
 
     /**
      * Elrobot entregará la orden al cliente si su estado actual se lo permite.
      */
-    public void entregarOrden(){
+    public void entregarOrden() {
         estadoActual.entregarOrden();
     }
 
     /**
      * El robot asignara un nuevo estado a su estado actual.
+     * 
      * @param nuevoEstado nuevo estado a cambiar.
      */
     public void asignaNuevoEstado(EstadoRobot nuevoEstado) {
@@ -90,6 +89,7 @@ public class McRobot {
 
     /**
      * Regresa el Estado suspendido del robot.
+     * 
      * @return estado suspendido.
      */
     public EstadoRobot getModoSuspendido() {
@@ -98,6 +98,7 @@ public class McRobot {
 
     /**
      * Regresa el Estado Activo del robot.
+     * 
      * @return estado activo.
      */
     public EstadoRobot getModoActivo() {
@@ -106,6 +107,7 @@ public class McRobot {
 
     /**
      * Regresa el Estado Caminar del robot.
+     * 
      * @return estado caminar.
      */
     public EstadoRobot getModoCaminar() {
@@ -114,6 +116,7 @@ public class McRobot {
 
     /**
      * Regresa el Estado tomar orden del robot.
+     * 
      * @return estado tomar orden.
      */
     public EstadoRobot getModoTomarOrden() {
@@ -122,15 +125,16 @@ public class McRobot {
 
     /**
      * Regresa el Estado cocinar del robot.
+     * 
      * @return estado tomar orden.
      */
     public EstadoRobot getModoCocinar() {
         return this.modoCocinando;
     }
 
-
     /**
      * Regresa el Estado entregar orden del robot.
+     * 
      * @return estado entregar orden.
      */
     public EstadoRobot getModoEntregarOrden() {
@@ -138,22 +142,38 @@ public class McRobot {
     }
 
     /**
-     * Regresa el estado actual en el que se encuentra el robot.
-     * @return estado actual del robot.
+     * Regresa la descripción del estado actual en el que se encuentra el robot.
+     * 
+     * @return descripción estado actual del robot.
      */
     public String getDescripcionEstadoActual() {
         return estadoActual.toString();
     }
 
-    public EstadoRobot getEstadoActual(){
+    /**
+     * Regresa el estado actual del robot.
+     * 
+     * @return estado actual del robot.
+     */
+    public EstadoRobot getEstadoActual() {
         return this.estadoActual;
     }
 
-    public Hamburguesa getOrden(){
+    /**
+     * Regresa la orden que el cliente pidió.
+     * 
+     * @return Hamburguesa que el cliente ordenó.
+     */
+    public Hamburguesa getOrden() {
         return this.hamburguesa;
     }
 
-    public void setIdOrden(Hamburguesa orden){
+    /**
+     * Asigna una orden nueva al robot.
+     * 
+     * @param orden platillo a asignar.
+     */
+    public void setOrden(Hamburguesa orden) {
         this.hamburguesa = orden;
     }
 }
