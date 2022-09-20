@@ -26,20 +26,22 @@ public class DosCarnes extends Hamburguesa {
         String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
         if(this.conQueso)
             preparacion+=this.ponerQueso()+"\n";
-        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerSalsaAgrigulce()+"\n"+this.ponerPan()+"\n";
         return preparacion;
     }
 
     @Override
     public String prepararProteina() {
-
-        return "Estoy preparando la carne";
+        if (!this.vegetariana)
+            return "Estoy preparando la carne";
+        return "Estoy preparando el sustituto de carne";
     }
 
     @Override
     public String ponerProteina() {
-
-        return "Estoy poniendo la carne";
+        if (!this.vegetariana)
+            return "Estoy poniendo la  carne \n" + this.ponerPollo();
+        return "Estoy poniendo el sustituto de carne";
     }
 
     public String ponerPollo() {

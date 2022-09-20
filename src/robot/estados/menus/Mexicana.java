@@ -23,21 +23,25 @@ public class Mexicana extends Hamburguesa {
 
     @Override
     public String preparar(boolean conQueso, boolean vegetariana){
-        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
+        String preparacion = this.ponerPan()+"\n"+this.ponerCremaConEspecias()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
         if(this.conQueso)
             preparacion+=this.ponerQueso()+"\n";
-        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+        preparacion+=this.ponerTotopos()+"\n"+this.ponerVegetales()+"\n"+this.ponerGuacamole()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
         return preparacion;
     }
 
     @Override
     public String prepararProteina() {
-        return "Estoy preparando la arrachera";
+        if (!this.vegetariana)
+            return "Estoy preparando la arrachera";
+        return "Estoy preparando el sustituto de arrachera";
     }
 
     @Override
     public String ponerProteina() {
-        return "Estoy poniendo la arrachera";
+        if (!this.vegetariana)
+            return "Estoy poniendo la arrachera";
+        return "Estoy poniendo el sustituto de carne";
     }
 
     public String ponerGuacamole() {
@@ -51,5 +55,4 @@ public class Mexicana extends Hamburguesa {
     public String ponerCremaConEspecias() {
         return "Estoy poniendo la crema con especias";
     }
-
 }

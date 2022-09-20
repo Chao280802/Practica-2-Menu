@@ -10,7 +10,7 @@ public class BigB extends Hamburguesa {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.precio = precio;
-        // Adentro del metodo se inicializa la variable OwO
+        /* Adentro del metodo se inicializa la variable OwO */
         this.conQueso(conQuesoRespuesta);
         this.vegetariana(vegetarianaRespuesta);
     }
@@ -24,22 +24,27 @@ public class BigB extends Hamburguesa {
     }
 
     @Override
-    public String preparar(boolean conQueso, boolean vegetariana){
-        String preparacion = this.ponerPan()+"\n"+this.ponerMayonesa()+"\n"+this.ponerMostaza()+"\n"+this.prepararProteina()+"\n"+this.ponerProteina()+"\n";
-        if(this.conQueso)
-            preparacion+=this.ponerQueso()+"\n";
-        preparacion+=this.ponerVegetales()+"\n"+this.ponerCatsup()+"\n"+this.ponerPan();
+    public String preparar(boolean conQueso, boolean vegetariana) {
+        String preparacion = this.ponerPan() + "\n" + this.ponerMayonesa() + "\n" + this.ponerMostaza() + "\n"
+                + this.prepararProteina() + "\n" + this.ponerProteina() + "\n";
+        if (this.conQueso)
+            preparacion += this.ponerQueso() + "\n";
+        preparacion += this.ponerVegetales() + "\n" + this.ponerCatsup() + "\n" + this.ponerPan();
         return preparacion;
     }
 
     @Override
     public String prepararProteina() {
-        return "Estoy preparando la carne";
+        if (!this.vegetariana)
+            return "Estoy preparando la carne";
+        return "Estoy preparando el sustituto de la carne";
     }
 
     @Override
     public String ponerProteina() {
-        return "Estoy poniendo la carne";
+        if (!this.vegetariana)
+            return "Estoy poniendo la carne";
+        return "Estoy poniendo el sustituto de carne";
     }
 
 }
