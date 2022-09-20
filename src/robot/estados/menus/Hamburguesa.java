@@ -5,7 +5,6 @@ package robot.estados.menus;
  * @author Chao2808 Heigz RodrigoSanchez06
  * @version (19 Septiembre 2022)
  * @see Menu
- * @see 
  */
 public abstract class Hamburguesa {
 
